@@ -1,0 +1,20 @@
+\documentclass[10pt,a4paper,twocolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{longtable}
+\begin{document}
+
+\begin{longtable}{|c|c|c|c|}
+{% for user in users%}
+\hline 
+{{user.lastname}} & {{user.surname}} & \includegraphics[height=2cm, width=0.4\textwidth]{../barcodes/{{user.id}}.png} & \includegraphics[width=2cm, height=2cm]{../barcodes/{{user.id}}.png}\\
+
+{% endfor %}
+\hline 
+\end{longtable} 
+
+\end{document}
