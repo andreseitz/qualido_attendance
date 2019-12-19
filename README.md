@@ -37,7 +37,7 @@ Als Admin wählt man im Admin-Modus in Qualido im Menübaum "Termin & Ressourcen
 
 ### Inbetriebnahme des Erfassungssystems
 
-
+Im subfolder host kann das script "install_host.bash" ausgeführt werden, das die Host-Software aus dem Netz läd (Internet vorausgesetzt) und ein startup script installiert, das den host bei jedem Neustart initialisiert.
 
 #### Smartphone als Barcodescanner
 
