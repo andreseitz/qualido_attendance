@@ -4,6 +4,7 @@ import os
 import shutil
 import argparse
 from jinja2 import Template, Environment, FileSystemLoader
+import subprocess
 
 #path = "~/Downloads/export.xlsx"
 
@@ -101,6 +102,14 @@ def render_template(users):
         fh.write(out)
     fh.close()
 
+### compile tex
+
+def compile_catalogue():
+    curdir = os.curdir
+    os.chdir("./tex/")
+    process = subprocess.Popen(['pdflatex', '-interaction=nonstopmode', 'catalogue.tex'])
+    os.chdir(curdir)
+
 ### main
 
 #TODO read arguments: excel path
@@ -120,6 +129,8 @@ def main():
     generate_user_barcodes(users)
     
     render_template(users)
+    compile_catalogue()
+
     
 
 
